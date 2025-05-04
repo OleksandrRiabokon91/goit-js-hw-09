@@ -1,3 +1,8 @@
+import { defineConfig } from 'vite';
+import FullReload from 'vite-plugin-full-reload';
+import SortCss from 'postcss-sort-media-queries';
+import { glob } from 'glob';
+
 export default defineConfig(({ command }) => {
   return {
     define: {
@@ -13,6 +18,6 @@ export default defineConfig(({ command }) => {
       emptyOutDir: true,
     },
     plugins: [FullReload(['./src/*.html']), SortCss({ sort: 'mobile-first' })],
-    base: '/goit-js-hw-09/', // Добавь этот параметр
+    base: '/goit-js-hw-09/',
   };
 });
